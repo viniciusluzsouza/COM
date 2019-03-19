@@ -35,7 +35,7 @@ ylabel('Amplitude [V]')
 
 subplot(512)
 plot(t, c_t)
-title('Portadora - c(t)=cos(2*pi*50000*t)')
+title('Portadora - c(t)=cos(2*pi*20000*t)')
 xlabel('Tempo [s]')
 ylabel('Amplitude [V]')
 
@@ -62,7 +62,7 @@ ylabel('Amplitude [V]')
 % modulação' (0.25; 0.5; 0.75 e 1 e 1.5) e observar os efeitos no
 % sinal modulado
 figure(2)
-m = 0.25; Ao = Am/m
+m = 0.25; Ao = Am/m;
 s_t_dsb = (m_t + Ao).*c_t; % sinal modulado em dsb
 subplot(511)
 plot(t, s_t_dsb)
@@ -70,7 +70,7 @@ title(['Sinal Modulado - m=0.25 A0=', num2str(Ao)])
 xlabel('Tempo [s]')
 ylabel('Amplitude [V]')
 
-m = 0.5; Ao = Am/m
+m = 0.5; Ao = Am/m;
 s_t_dsb = (m_t + Ao).*c_t;
 subplot(512)
 plot(t, s_t_dsb)
@@ -78,7 +78,7 @@ title(['Sinal Modulado - m=0.5 A0=', num2str(Ao)])
 xlabel('Tempo [s]')
 ylabel('Amplitude [V]')
 
-m = 0.75; Ao = Am/m
+m = 0.75; Ao = Am/m;
 s_t_dsb = (m_t + Ao).*c_t;
 subplot(513)
 plot(t, s_t_dsb)
@@ -86,7 +86,7 @@ title(['Sinal Modulado - m=0.75 A0=', num2str(Ao)])
 xlabel('Tempo [s]')
 ylabel('Amplitude [V]')
 
-m = 1; Ao = Am/m
+m = 1; Ao = Am/m;
 s_t_dsb = (m_t + Ao).*c_t;
 subplot(514)
 plot(t, s_t_dsb)
@@ -94,7 +94,7 @@ title(['Sinal Modulado - m=1 A0=', num2str(Ao)])
 xlabel('Tempo [s]')
 ylabel('Amplitude [V]')
 
-m = 1.5; Ao = Am/m
+m = 1.5; Ao = Am/m;
 s_t_dsb = (m_t + Ao).*c_t;
 subplot(515)
 plot(t, s_t_dsb)
