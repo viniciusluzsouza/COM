@@ -24,7 +24,7 @@ M_f_somado = fftshift(fft(m_t_somado)/length(m_t_somado));
 filtro_PA = [zeros(1, 341) ones(1, 160)];
 
 S_f = M_f_somado.*filtro_PA;
-s_t = ifft(ifftshift(S_f));
+s_t = ifft(ifftshift(S_f))/length(S_f);
 
 % • Recuperar os sinais originais
 r1_t = s_t.*cos(2*pi*9e3*t);
@@ -40,9 +40,9 @@ filtro_pf_2a4k = [zeros(1, 271) ones(1, 19) zeros(1, 211)];
 rec1_f = R1_f.*filtro_pb_1k;
 rec2_f = R2_f.*filtro_pf_1a3k;
 rec3_f = R3_f.*filtro_pf_2a4k;
-rec1_t = ifft(ifftshift(rec1_f));
-rec2_t = ifft(ifftshift(rec2_f));
-rec3_t = ifft(ifftshift(rec3_f));
+rec1_t = ifft(ifftshift(rec1_f))/length(rec1_f);
+rec2_t = ifft(ifftshift(rec2_f))/length(rec2_f);
+rec3_t = ifft(ifftshift(rec3_f))/length(rec3_f);
 
 % Plots
 M1_f = fftshift(fft(m1_t)/length(m1_t));
@@ -193,15 +193,3 @@ plot(f, abs(rec3_f))
 title('Sinal demodulado - cos(2*pi*3000*t)')
 xlabel('Frequência [Hz]')
 ylabel('Amplitude [V]')
-
-% teste_t = cos(2*pi*10e3*t) + cos(2*pi*12e3*t) + cos(2*pi*14e3*t);
-% teste_f = fftshift(fft(teste_t)/length(teste_t));
-% filtro_teste = [zeros(1, 250) ones(1, 251)];
-% teste_f = teste_f.*filtro_teste;
-% teste_t = ifft(ifftshift(teste_f));
-% 
-% saida = cos(2*pi*9e3*t).*teste_t;
-% saida_f = fftshift(fft(saida)/length(saida));
-% 
-% figure(5)
-% plot(f, abs(saida_f))
