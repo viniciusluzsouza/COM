@@ -3,8 +3,8 @@ close all
 clc
 
 n = 100;
-Ac = 10;
-Am = 2;
+Ac = 1;
+Am = 1;
 fc = 50e3;
 fm = 1e3;
 f_cut = 7e3;
@@ -12,8 +12,8 @@ fa = 20*fc;
 t = [0:1/fa:1];
 
 c_t = Ac*cos(2*pi*fc*t);
-m_t = Am*cos(2*pi*fm*t);
-% m_t = 5*sin(2*pi*500*t) + 5/3*sin(2*pi*1500*t) + sin(2*pi*2500*t) + 5/7*sin(2*pi*3500*t) + 5/9*sin(2*pi*4500*t) + 5/11*sin(2*pi*5500*t);
+% m_t = Am*cos(2*pi*fm*t);
+m_t = 5*sin(2*pi*500*t) + 5/3*sin(2*pi*1500*t) + sin(2*pi*2500*t) + 5/7*sin(2*pi*3500*t) + 5/9*sin(2*pi*4500*t) + 5/11*sin(2*pi*5500*t);
 s_t = c_t.*m_t; % sinal modulado
 r_t = s_t.*c_t; % sinal demodulado
 filtro_PB = fir1(n, (f_cut*2)/fa)';

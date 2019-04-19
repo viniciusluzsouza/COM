@@ -34,4 +34,3 @@ xlim([0 2/fm])
 subplot(515)
 plot(t, info)
 xlim([0 2/fm])
-
