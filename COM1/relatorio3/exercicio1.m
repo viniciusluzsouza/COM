@@ -32,7 +32,7 @@ f_cut = 8e3;
 filtro_PB = fir1(100, (f_cut*2)/Fs_in);
 
 i = 2;
-for k = [3]
+for k = [3 5 8 13]
     passo_q = Vpp/(2^k); % passo de quantizacao
     
     x_quant_1 = x_n + ((Vpp/2)-(passo_q/2)); % deslocamento pra cima
